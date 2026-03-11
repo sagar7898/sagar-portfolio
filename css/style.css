@@ -1,0 +1,315 @@
+﻿/* GLOBAL */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #0f172a;
+    color: white;
+    font-family: Segoe UI, sans-serif;
+}
+
+
+/* HERO SECTION */
+
+.hero {
+    height: 100vh;
+    padding-top: 100px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+
+    /* HERO TEXT */
+
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .hero p {
+        color: #94a3b8;
+        max-width: 650px;
+        margin: auto;
+    }
+/* FLOATING TECH */
+
+.floating-tech {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+    .floating-tech span {
+        position: absolute;
+        color: #3b82f6;
+        font-weight: bold;
+        opacity: 0.15;
+        animation: float 20s linear infinite;
+    }
+
+        /* RANDOM POSITIONS */
+
+        .floating-tech span:nth-child(1) {
+            top: 20%;
+            left: 10%;
+        }
+
+        .floating-tech span:nth-child(2) {
+            top: 60%;
+            left: 20%;
+        }
+
+        .floating-tech span:nth-child(3) {
+            top: 30%;
+            left: 70%;
+        }
+
+        .floating-tech span:nth-child(4) {
+            top: 75%;
+            left: 60%;
+        }
+
+        .floating-tech span:nth-child(5) {
+            top: 10%;
+            left: 50%;
+        }
+
+/* FLOAT ANIMATION */
+
+@keyframes float {
+
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-40px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+
+/* TECH STACK */
+
+.tech-card {
+    background: #1e293b;
+    padding: 35px;
+    border-radius: 12px;
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+
+    /* HOVER EFFECT */
+
+    .tech-card:hover {
+        background: #3b82f6;
+        transform: translateY(-6px);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    }
+
+/* SKILLS */
+
+.progress {
+    height: 10px;
+    background: #1e293b;
+}
+
+.progress-bar {
+    background: #3b82f6;
+    width: 0;
+    transition: width 1.5s ease;
+}
+
+/* SECTION SPACING */
+
+section {
+    padding: 80px 0;
+}
+
+
+/* NAVBAR CUSTOM */
+
+.navbar {
+    background: #0f172a !important;
+}
+
+    .navbar .nav-link {
+        color: white !important;
+    }
+
+        .navbar .nav-link:hover {
+            color: #3b82f6 !important;
+        }
+
+
+
+/* PROJECTS */
+
+.project-card {
+    background: #1e293b;
+    border-radius: 12px;
+    transition: 0.3s;
+    height: 100%;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+    .project-card:hover {
+        transform: translateY(-6px);
+        background: #334155;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+
+    .project-card h4 {
+        margin-bottom: 15px;
+    }
+
+    .project-card p {
+        color: #94a3b8;
+    }
+/* PROJECT IMAGE */
+
+.project-img {
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    height: 200px;
+    object-fit: cover;
+    width: 100%;
+}
+
+
+
+/* TECH BADGES */
+
+.tech-badges {
+    margin-top: 15px;
+}
+
+    .tech-badges span {
+        display: inline-block;
+        background: #0f172a;
+        padding: 6px 12px;
+        border-radius: 6px;
+        font-size: 12px;
+        margin: 4px;
+    }
+
+
+/* ARCHITECTURE */
+
+.arch-box {
+    background: #1e293b;
+    padding: 25px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+    .arch-box:hover {
+        background: #3b82f6;
+        transform: translateY(-5px);
+    }
+
+
+/* PROBLEM SOLVING */
+
+.problem-card {
+    background: #1e293b;
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+    .problem-card:hover {
+        transform: translateY(-5px);
+        background: #334155;
+    }
+
+    .problem-card h5 {
+        color: #3b82f6;
+    }
+
+    .problem-card p {
+        color: #94a3b8;
+    }
+
+
+/* EXPERIENCE */
+
+.experience-card {
+    background: #1e293b;
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+    .experience-card:hover {
+        transform: translateY(-6px);
+        background: #334155;
+    }
+
+    .experience-card h4 {
+        margin-bottom: 10px;
+    }
+
+    .experience-card p {
+        color: #94a3b8;
+    }
+
+
+/* TERMINAL */
+
+.terminal {
+    background: #020617;
+    padding: 30px;
+    border-radius: 10px;
+    font-family: monospace;
+    max-width: 800px;
+    margin: auto;
+}
+
+#terminalOutput {
+    min-height: 120px;
+    margin-bottom: 10px;
+    color: #22c55e;
+}
+
+.terminal-input {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+    .terminal-input span {
+        color: #22c55e;
+    }
+
+    .terminal-input input {
+        background: transparent;
+        border: none;
+        outline: none;
+        color: white;
+        width: 100%;
+    }
+
+/* CONTACT */
+
+.contact-links a {
+    min-width: 160px;
+}
+
+/* FOOTER */
+
+footer {
+    border-top: 1px solid #1e293b;
+    margin-top: 40px;
+}
