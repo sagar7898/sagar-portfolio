@@ -6,8 +6,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <meta name="description" content="Sagar Nachankar – .NET Backend Engineer specializing in ASP.NET, Azure AI, automation systems and scalable web applications.">
+    <meta name="keywords" content=".NET Developer, ASP.NET Core, Azure AI, SQL Server, Backend Engineer, Automation Developer">
+    <meta name="author" content="Sagar Nachankar">
+
+    <meta property="og:title" content="Sagar Nachankar – .NET Backend Engineer">
+    <meta property="og:description" content="Portfolio of Sagar Nachankar showcasing .NET backend projects, automation systems and Azure AI solutions.">
+    <meta property="og:image" content="images/portfolio-preview.png">
+    <meta property="og:type" content="website">
+
     <title>Sagar Nachankar | .NET Backend Engineer</title>
 
+    <link rel="icon" href="images/favicon.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
@@ -36,7 +46,7 @@
                 <ul class="navbar-nav ms-auto">
 
                     <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
+                        <a class="nav-link" href="#about">About</a>
                     </li>
 
                     <li class="nav-item">
@@ -53,12 +63,13 @@
 
                 </ul>
 
+
             </div>
 
         </div>
 
     </nav>
-
+    <div id="scrollBar"></div>
 
 
     <!-- HERO -->
@@ -90,7 +101,71 @@
 
     </section>
 
+    <!--====================about===============-->
 
+    <section id="about">
+
+        <div class="container">
+
+            <h2 class="text-center fw-bold text-primary mb-5">About Me</h2>
+
+            <div class="row align-items-center">
+
+                <!-- PROFILE IMAGE -->
+
+                <div class="col-md-4 text-center">
+
+                    <img src="images/profile.png"
+                         class="about-img">
+
+                </div>
+
+
+                <!-- ABOUT TEXT -->
+
+                <div class="col-md-8">
+
+                    <h4>Hello, I'm Sagar Nachankar</h4>
+
+                    <p>
+                        I'm a .NET Backend Engineer with 2+ years of experience building
+                        scalable web applications and automation systems.
+                    </p>
+
+                    <p>
+                        I specialize in backend architecture using ASP.NET Core,
+                        SQL Server and Azure cloud services. My focus is on building
+                        automation workflows, reliable APIs and data-driven applications.
+                    </p>
+
+                    <p>
+                        I enjoy solving real engineering problems such as document
+                        processing automation, messaging automation and backend
+                        system optimization.
+                    </p>
+
+                </div>
+
+                <div class="col-md-12">
+
+                    <div class="about-highlight">
+
+                        <div>⚡ 2+ Years Experience</div>
+                        <div>🚀 Backend Architecture</div>
+                        <div>🤖 Automation Systems</div>
+                        <div>☁ Azure Cloud</div>
+
+                    </div>
+
+
+                </div>
+
+
+
+
+            </div>
+        </div>
+    </section>
 
     <!-- TECH STACK -->
 
@@ -146,7 +221,7 @@
 
     <!-- SKILLS -->
 
-    <section class="py-5" id="skills">
+    <section id="skills">
 
         <div class="container">
 
@@ -259,6 +334,21 @@
 
                         <img src="images/invoice-project.jpg" class="img-fluid project-img">
 
+                        <div class="project-overlay">
+
+                            <a href="#" class="btn btn-primary btn-sm">View Demo</a>
+
+                            <a href="#" class="btn btn-outline-light btn-sm">GitHub</a>
+
+                            <a href="#"
+                               class="btn btn-outline-light btn-sm"
+                               data-bs-toggle="modal"
+                               data-bs-target="#caseStudyInvoice">
+                                Case Study
+                            </a>
+
+                        </div>
+
                         <div class="p-4">
 
                             <h4>Invoice AI Automation</h4>
@@ -277,11 +367,7 @@
                             </div>
 
                         </div>
-                        <button class="btn btn-primary mt-3"
-                                data-bs-toggle="modal"
-                                data-bs-target="#projectModal1">
-                            View Details
-                        </button>
+
 
                     </div>
 
@@ -294,8 +380,21 @@
 
                     <div class="project-card">
 
-                        <img src="images/whatsapp-project.jpg" class="img-fluid project-img">
+                        <img src="images/whatsapp-project.jpg" class="img-fluid project-img" loading="lazy">
+                        <div class="project-overlay">
 
+                            <a href="#" class="btn btn-primary btn-sm">View Demo</a>
+
+                            <a href="#" class="btn btn-outline-light btn-sm">GitHub</a>
+
+                            <a href="#"
+                               class="btn btn-outline-light btn-sm"
+                               data-bs-toggle="modal"
+                               data-bs-target="#caseStudyWhatsapp">
+                                Case Study
+                            </a>
+
+                        </div>
                         <div class="p-4">
                             <h4>WhatsApp Automation</h4>
 
@@ -312,11 +411,7 @@
 
                             </div>
                         </div>
-                        <button class="btn btn-primary mt-3"
-                                data-bs-toggle="modal"
-                                data-bs-target="#projectModal1">
-                            View Details
-                        </button>
+
                     </div>
 
                 </div>
@@ -328,6 +423,19 @@
 
                     <div class="project-card">
                         <img src="images/task-project.jpg" class="img-fluid project-img">
+                        <div class="project-overlay">
+
+                            <a href="#" class="btn btn-primary btn-sm">View Demo</a>
+
+                            <a href="#" class="btn btn-outline-light btn-sm">GitHub</a>
+
+                            <a href="#"
+                               class="btn btn-outline-light btn-sm"
+                               data-bs-toggle="modal"
+                               data-bs-target="#caseStudyTaskManager">
+                                Case Study
+                            </a>
+                        </div>
                         <div class="p-4">
 
                             <h4>Task Manager System</h4>
@@ -346,11 +454,7 @@
                             </div>
 
                         </div>
-                        <button class="btn btn-primary mt-3"
-                                data-bs-toggle="modal"
-                                data-bs-target="#projectModal1">
-                            View Details
-                        </button>
+
                     </div>
 
                 </div>
@@ -361,37 +465,112 @@
         </div>
 
     </section>
-    <div class="modal fade" id="projectModal1">
+
+    <!-- CASE STUDY MODALS -->
+
+    <div class="modal fade" id="caseStudyInvoice">
 
         <div class="modal-dialog modal-lg">
 
             <div class="modal-content bg-dark text-white">
 
                 <div class="modal-header">
-
-                    <h5 class="modal-title">Invoice AI Automation</h5>
-
+                    <h5 class="modal-title">Invoice AI Automation – Case Study</h5>
                     <button class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
-
                 </div>
 
                 <div class="modal-body">
 
+                    <h6 class="text-primary">Problem</h6>
+
                     <p>
-                        An intelligent invoice processing system that extracts
-                        data using Azure Document Intelligence and stores
-                        structured information in SQL Server.
+                        Businesses receive hundreds of invoices through email every day.
+                        Manually opening emails, downloading attachments, and extracting
+                        invoice data is time-consuming and prone to human errors.
+                    </p>
+
+
+                    <h6 class="text-primary mt-4">System Architecture</h6>
+
+                    <div class="architecture-diagram">
+
+                        <div class="arch-node" data-info="System monitors incoming emails for invoice attachments">
+                            Email Inbox
+                        </div>
+
+                        <div class="arch-arrow">↓</div>
+
+                        <div class="arch-node" data-info="ASP.NET backend fetches email attachments using Microsoft Graph API">
+                            ASP.NET Backend
+                        </div>
+
+                        <div class="arch-arrow">↓</div>
+
+                        <div class="arch-node" data-info="Invoice document sent to Azure AI Document Intelligence for processing">
+                            Azure AI
+                        </div>
+
+                        <div class="arch-arrow">↓</div>
+
+                        <div class="arch-node" data-info="AI extracts invoice fields like vendor, date, amount and line items">
+                            Data Extraction
+                        </div>
+
+                        <div class="arch-arrow">↓</div>
+
+                        <div class="arch-node" data-info="Structured invoice data stored in database for reporting">
+                            Database Storage
+                        </div>
+
+                    </div>
+
+                    <div id="archExplanation" class="mt-3 text-secondary text-center"></div>
+
+
+                    <h6 class="text-primary mt-4">Approach</h6>
+
+                    <p>
+                        Developed an automated pipeline using ASP.NET and Microsoft Graph API
+                        to read incoming emails and identify invoice attachments.
+                        The documents are processed using Azure AI Document Intelligence
+                        to extract structured invoice data.
+                    </p>
+
+
+                    <h6 class="text-primary mt-3">Solution</h6>
+
+                    <p>
+                        Implemented an intelligent document processing system that automatically
+                        reads invoice attachments from email, sends them to Azure AI for
+                        analysis, and stores the extracted data in structured format
+                        for reporting and automation workflows.
                     </p>
 
                     <ul>
-                        <li>ASP.NET Backend</li>
+                        <li>Microsoft Graph API for Email Integration</li>
                         <li>Azure AI Document Intelligence</li>
-                        <li>SQL Server</li>
+                        <li>ASP.NET Backend Processing</li>
+                        <li>SQL Database Storage</li>
                     </ul>
 
-                    <a href="#" class="btn btn-primary">Live Demo</a>
 
-                    <a href="#" class="btn btn-outline-light">GitHub</a>
+                    <h6 class="text-primary mt-3">Result</h6>
+
+                    <p>
+                        The automation reduced manual data entry significantly.
+                        Invoice information can now be processed automatically
+                        and made available instantly for reporting and accounting workflows.
+                    </p>
+
+
+                    <h6 class="text-primary mt-3">Technical Challenge</h6>
+
+                    <p>
+                        Handling different invoice formats was challenging.
+                        Azure AI Document Intelligence models were used to accurately
+                        extract fields from multiple layouts while maintaining
+                        reliable backend processing.
+                    </p>
 
                 </div>
 
@@ -401,39 +580,323 @@
 
     </div>
 
+    <div class="modal fade" id="caseStudyWhatsapp">
+
+        <div class="modal-dialog modal-lg">
+
+            <div class="modal-content bg-dark text-white">
+
+                <div class="modal-header">
+
+                    <h5 class="modal-title">WhatsApp Automation – Case Study</h5>
+
+                    <button class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+
+                </div>
+
+                <div class="modal-body">
+
+                    <h6 class="text-primary">Problem</h6>
+
+                    <p>
+                        Businesses needed a way to send invoices and documents directly
+                        through WhatsApp from the application dashboard. Sending files
+                        manually through WhatsApp Web was slow and inefficient.
+                    </p>
+
+
+                    <h6 class="text-primary mt-4">System Architecture</h6>
+
+                    <div class="architecture-diagram">
+
+                        <div class="arch-node" data-info="User clicks send file from dashboard">
+                            User Action
+                        </div>
+
+                        <div class="arch-arrow">↓</div>
+
+                        <div class="arch-node" data-info="ASP.NET backend prepares automation request">
+                            ASP.NET Backend
+                        </div>
+
+                        <div class="arch-arrow">↓</div>
+
+                        <div class="arch-node" data-info="PuppeteerSharp controls browser automation">
+                            PuppeteerSharp
+                        </div>
+
+                        <div class="arch-arrow">↓</div>
+
+                        <div class="arch-node" data-info="Automation interacts with WhatsApp Web">
+                            WhatsApp Web
+                        </div>
+
+                        <div class="arch-arrow">↓</div>
+
+                        <div class="arch-node" data-info="File and message sent to customer">
+                            File Sent
+                        </div>
+
+                    </div>
+
+                    <div id="archExplanation" class="mt-3 text-secondary text-center"></div>
+
+
+                    <h6 class="text-primary mt-4">Approach</h6>
+
+                    <p>
+                        Designed an automation workflow using PuppeteerSharp to control
+                        WhatsApp Web through an ASP.NET backend service.
+                    </p>
+
+
+                    <h6 class="text-primary mt-3">Solution</h6>
+
+                    <p>
+                        Implemented PuppeteerSharp automation that opens WhatsApp Web,
+                        handles QR authentication, searches contacts, uploads files,
+                        and sends messages automatically.
+                    </p>
+
+                    <ul>
+                        <li>ASP.NET Backend</li>
+                        <li>PuppeteerSharp Automation</li>
+                        <li>WhatsApp Web Integration</li>
+                    </ul>
+
+
+                    <h6 class="text-primary mt-3">Result</h6>
+
+                    <p>
+                        Users can now send invoices and documents directly from the
+                        application dashboard, reducing manual effort and improving workflow efficiency.
+                    </p>
+
+
+                    <h6 class="text-primary mt-3">Technical Challenge</h6>
+
+                    <p>
+                        WhatsApp Web uses dynamic DOM elements. Stable selectors and
+                        wait logic were implemented to reliably detect the send button
+                        and file upload input during automation.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="modal fade" id="caseStudyTaskManager">
+
+        <div class="modal-dialog modal-lg">
+
+            <div class="modal-content bg-dark text-white">
+
+                <div class="modal-header">
+                    <h5 class="modal-title">Task Manager System – Case Study</h5>
+                    <button class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+
+                <div class="modal-body">
+
+                    <h6 class="text-primary">Problem</h6>
+
+                    <p>
+                        Teams often struggle to track customer-related tasks efficiently.
+                        Tasks were being managed manually or across multiple tools,
+                        making it difficult to monitor progress, deadlines, and task ownership.
+                    </p>
+
+
+                    <h6 class="text-primary mt-4">System Architecture</h6>
+
+                    <div class="architecture-diagram">
+
+                        <div class="arch-node" data-info="User creates and manages tasks from the dashboard">
+                            User Dashboard
+                        </div>
+
+                        <div class="arch-arrow">↓</div>
+
+                        <div class="arch-node" data-info="ASP.NET Core MVC controllers handle requests and validations">
+                            MVC Controller
+                        </div>
+
+                        <div class="arch-arrow">↓</div>
+
+                        <div class="arch-node" data-info="Business logic handled through service layer">
+                            Service Layer
+                        </div>
+
+                        <div class="arch-arrow">↓</div>
+
+                        <div class="arch-node" data-info="Repository layer manages database operations">
+                            Repository Layer
+                        </div>
+
+                        <div class="arch-arrow">↓</div>
+
+                        <div class="arch-node" data-info="Tasks and customers stored using Entity Framework Core">
+                            SQL Database
+                        </div>
+
+                    </div>
+
+                    <div id="archExplanation" class="mt-3 text-secondary text-center"></div>
+
+
+                    <h6 class="text-primary mt-4">Approach</h6>
+
+                    <p>
+                        Built a task and customer management system using ASP.NET Core MVC
+                        with a layered architecture to maintain separation of concerns
+                        between controllers, services, and repositories.
+                    </p>
+
+
+                    <h6 class="text-primary mt-3">Solution</h6>
+
+                    <p>
+                        Developed a responsive dashboard that allows users to create,
+                        manage, and monitor tasks linked to customers. The system includes
+                        validation, filtering, task status updates, and automated reminders.
+                    </p>
+
+                    <ul>
+                        <li>Customer Management Module</li>
+                        <li>Task Creation and Tracking</li>
+                        <li>Email Reminder Automation</li>
+                        <li>Dashboard with Task Statistics</li>
+                        <li>Excel Export Functionality</li>
+                    </ul>
+
+
+                    <h6 class="text-primary mt-3">Result</h6>
+
+                    <p>
+                        The application provides a centralized system to manage tasks and
+                        customer activities efficiently, improving task visibility and
+                        ensuring important deadlines are not missed.
+                    </p>
+
+
+                    <h6 class="text-primary mt-3">Technical Challenge</h6>
+
+                    <p>
+                        Implementing automated email reminders and maintaining a clean
+                        layered architecture required careful separation of business logic,
+                        repository queries, and controller actions.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- API SECTION -->
+
+    <section id="api-playground" >
+
+        <div class="container">
+
+            <h2 class="text-center fw-bold text-primary mb-5">
+                Live API Playground
+            </h2>
+
+            <div class="api-box">
+
+                <input id="apiUrl"
+                       value="https://jsonplaceholder.typicode.com/users/1">
+
+                <button onclick="callApi()" class="btn btn-primary">
+                    Send Request
+                </button>
+
+<pre id="apiResponse"></pre>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+
     <!-- ARCHITECTURE -->
 
-    <section class="py-5" id="architecture" data-aos="zoom-in">
+    <section id="architecture" data-aos="zoom-in">
 
         <div class="container text-center">
 
             <h2 class="fw-bold text-primary mb-5">How I Build .NET Applications</h2>
 
-            <div class="row justify-content-center g-4">
+            <div class="arch-flow">
 
-                <div class="col-md-2">
-                    <div class="arch-box" onclick="showArch('client')">Client</div>
+                <div class="arch-card" onclick="flipCard(this)">
+                    <div class="arch-inner">
+                        <div class="arch-front">Client</div>
+                        <div class="arch-back">
+                            Client sends HTTP requests to the backend application.
+                        </div>
+                    </div>
                 </div>
 
-                <div class="col-md-2">
-                    <div class="arch-box" onclick="showArch('controller')">Controller</div>
+                <div class="arrow">→</div>
+
+                <div class="arch-card" onclick="flipCard(this)">
+                    <div class="arch-inner">
+                        <div class="arch-front">Controller</div>
+                        <div class="arch-back">
+                            Controllers handle incoming requests and return responses.
+                        </div>
+                    </div>
                 </div>
 
-                <div class="col-md-2">
-                    <div class="arch-box" onclick="showArch('service')">Service</div>
+                <div class="arrow">→</div>
+
+                <div class="arch-card" onclick="flipCard(this)">
+                    <div class="arch-inner">
+                        <div class="arch-front">Service</div>
+                        <div class="arch-back">
+                            Service layer contains business logic and validation.
+                        </div>
+                    </div>
                 </div>
 
-                <div class="col-md-2">
-                    <div class="arch-box" onclick="showArch('repository')">Repository</div>
+                <div class="arrow">→</div>
+
+                <div class="arch-card" onclick="flipCard(this)">
+                    <div class="arch-inner">
+                        <div class="arch-front">Repository</div>
+                        <div class="arch-back">
+                            Repository layer manages database operations.
+                        </div>
+                    </div>
                 </div>
 
-                <div class="col-md-2">
-                    <div class="arch-box" onclick="showArch('database')">SQL Server</div>
+                <div class="arrow">→</div>
+
+                <div class="arch-card" onclick="flipCard(this)">
+                    <div class="arch-inner">
+                        <div class="arch-front">SQL Server</div>
+                        <div class="arch-back">
+                            SQL Server stores structured application data.
+                        </div>
+                    </div>
                 </div>
 
             </div>
 
-            <div id="archInfo" class="mt-5 text-secondary"></div>
+            <div id="archInfo" class="arch-info text-secondary">
+                Click a layer above to explore how the architecture works.
+            </div>
 
         </div>
 
@@ -441,7 +904,7 @@
 
     <!-- PROBLEM SOLVING -->
 
-    <section class="py-5" data-aos="fade-right">
+    <section  data-aos="fade-right">
 
         <div class="container">
 
@@ -507,7 +970,7 @@
 
     <!-- PRODUCTION EXPERIENCE -->
 
-    <section class="py-5">
+    <section >
 
         <div class="container">
 
@@ -627,7 +1090,7 @@
 
     <!-- TERMINAL MODE -->
 
-    <section class="py-5" data-aos="zoom-in">
+    <section data-aos="zoom-in">
 
         <div class="container">
 
@@ -653,7 +1116,7 @@
 
     <!-- CONTACT -->
 
-    <section id="contact" class="py-5" data-aos="fade-up">
+    <section id="contact"  data-aos="fade-up" style="padding:200px 0">
 
         <div class="container text-center">
 
@@ -680,7 +1143,27 @@
 
     </section>
 
+    <!-- CHAT BOX -->
 
+    <div class="chat-container">
+        <div class="chat-typing">
+            <span id="chatTypingText"></span>
+        </div>
+        <button id="chatToggle" class="chat-icon">
+            💬
+        </button>
+
+        <div class="chatbot" id="chatBox">
+
+            <div id="chatHeader">Ask About Me</div>
+
+            <div id="chatBody"></div>
+
+            <input type="text" id="chatInput" placeholder="Ask something..." />
+
+        </div>
+
+    </div>
 
     <!-- FOOTER -->
 
@@ -692,10 +1175,14 @@
 
     </footer>
 
+
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 
     <script src="js/script.js"></script>
+
+
 
 </body>
 
