@@ -800,3 +800,21 @@ footer {
     background: linear-gradient(135deg,#3b82f6,#2563eb);
     color: white;
 }
+
+@media (max-width: 480px) {
+
+    .ai-widget {
+        right: 0;
+        left: 0;
+        bottom: 20px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .ai-chat-window {
+        width: calc(100% - 30px);
+        margin-bottom: 70px;
+        height: 65vh;
+    }
+}
+
