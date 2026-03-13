@@ -121,6 +121,11 @@ terminalInput.addEventListener("keypress", function (e) {
             result = "Invoice AI Automation, WhatsApp Automation, Task Manager.";
         }
 
+        else if (command === "clear") {
+            terminalOutput.innerHTML = "";
+            return;
+        }
+
         else {
             result = "Unknown command. Try: about, skills, projects";
         }
@@ -217,45 +222,179 @@ archNodes.forEach(node => {
 });
 
 
-const chatToggle = document.getElementById("chatToggle");
-const chatBox = document.getElementById("chatBox");
 
-chatToggle.addEventListener("click", () => {
+    const chatBtn = document.querySelector(".ai-open-btn");
+    const chatWindow = document.querySelector(".ai-chat-window");
+    const chatMessages = document.getElementById("aiMessages");
+    const chatInput = document.getElementById("aiInput");
+    const sendBtn = document.querySelector(".ai-send-btn");
 
-    if (chatBox.style.display === "block") {
-        chatBox.style.display = "none";
-    }
-    else {
-        chatBox.style.display = "block";
-    }
 
-});
 
-const chatInput = document.getElementById("chatInput");
-const chatBody = document.getElementById("chatBody");
 
-chatInput.addEventListener("keypress", async function (e) {
+
+    let chatStarted = false;
+document.addEventListener("DOMContentLoaded", function () {
+    chatBtn.addEventListener("click", () => {
+
+        if (chatWindow.style.display === "flex") {
+
+            chatWindow.style.display = "none";
+            chatBtn.innerHTML = "💬";   // back to chat icon
+
+        } else {
+
+            chatWindow.style.display = "flex";
+            chatBtn.innerHTML = "✖";   // change to close icon
+
+            chatInput.focus();  
+
+            if (!chatStarted) {
+
+                addMessage("Hi 👋 I'm Rutuja , Sagar's AI Assistant.", "bot", true);
+                addMessage("Ask me anything about his projects, skills, or experience.", "bot", false);
+
+                chatStarted = true;
+            }
+        }
+    });
+
+    sendBtn.addEventListener("click", sendMessage);
+})
+
+function sendMessage() {
+
+    const question = chatInput.value.trim();
+
+    if (question === "") return;
+
+    askAI(question);
+
+    chatInput.value = "";
+}
+
+
+function showAIThinking() {
+
+    const wrapper = document.createElement("div");
+    wrapper.className = "ai-message bot";
+    wrapper.id = "aiThinking";
+
+    const avatar = document.createElement("div");
+    avatar.className = "ai-avatar";
+    avatar.innerHTML = '<img src="/images/bot.png">';
+
+    const bubble = document.createElement("div");
+    bubble.className = "ai-bubble ai-thinking";
+
+    bubble.innerHTML = "Typing<span>.</span><span>.</span><span>.</span>";
+
+    wrapper.appendChild(avatar);
+    wrapper.appendChild(bubble);
+
+    chatMessages.appendChild(wrapper);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+
+}
+
+
+function removeAIThinking() {
+
+    const thinking = document.getElementById("aiThinking");
+
+    if (thinking) thinking.remove();
+}
+async function askAI(question) {
+
+    addMessage(question, "user");
+
+    showAIThinking();
+
+    const res = await fetch("https://portfolio-ai-chatbot-ypfk.onrender.com/chat", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ message: question })
+    });
+
+    const data = await res.json();
+
+    removeAIThinking();
+
+    typeMessage(data.reply);
+
+}
+
+const closeBtn = document.querySelector(".ai-close");
+
+if (closeBtn) {
+    closeBtn.onclick = () => {
+        chatWindow.style.display = "none";
+    };
+}
+function addMessage(text, type) {
+
+    const wrapper = document.createElement("div");
+    wrapper.className = type === "user" ? "ai-message user" : "ai-message bot";
+
+    const avatar = document.createElement("div");
+    avatar.className = "ai-avatar";
+
+    avatar.innerHTML = type === "user"
+        ? '<img src="/images/user.png">'
+        : '<img src="/images/bot.png">';
+
+    const bubble = document.createElement("div");
+    bubble.className = "ai-bubble";
+
+    bubble.innerHTML = text.replace(/\n/g, "<br>");
+
+    wrapper.appendChild(avatar);
+    wrapper.appendChild(bubble);
+
+    chatMessages.appendChild(wrapper);
+
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+function typeMessage(text) {
+
+    const wrapper = document.createElement("div");
+    wrapper.className = "ai-message bot";
+
+    const avatar = document.createElement("div");
+    avatar.className = "ai-avatar";
+    avatar.innerHTML = '<img src="/images/bot.png">';
+
+    const bubble = document.createElement("div");
+    bubble.className = "ai-bubble";
+
+    wrapper.appendChild(avatar);
+    wrapper.appendChild(bubble);
+    chatMessages.appendChild(wrapper);
+
+    let i = 0;
+
+    const interval = setInterval(() => {
+
+        bubble.textContent += text[i];
+
+        i++;
+
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+
+        if (i >= text.length) {
+            clearInterval(interval);
+        }
+
+    }, 15);
+}
+
+chatInput.addEventListener("keypress", function (e) {
 
     if (e.key === "Enter") {
-
-        let question = chatInput.value;
-
-        chatBody.innerHTML += "<div>> " + question + "</div>";
-
-        const res = await fetch("http://localhost:3000/chat", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({ message: question })
-        });
-
-        const data = await res.json();
-
-        chatBody.innerHTML += "<div>" + data.reply + "</div>";
-
-        chatInput.value = "";
-
+        e.preventDefault();
+        sendMessage();
     }
 
 });
@@ -279,89 +418,7 @@ async function callApi() {
 
 
 
-const cursor = document.querySelector(".cursor");
 
-document.addEventListener("mousemove", (e) => {
-
-    cursor.style.left = e.clientX + "px";
-    cursor.style.top = e.clientY + "px";
-
-});
-
-
-// Chatbot invitation messages
-
-const chatbotMessages = [
-    "Ask about my projects",
-    "Ask about my .NET backend skills ⚙",
-    "Ask about automation systems "
-];
-
-let chatbotMessageIndex = 0;
-let chatbotCharIndex = 0;
-
-const chatbotTypingElement =
-    document.getElementById("chatTypingText");
-
-
-// Typing animation
-
-function startChatbotTyping() {
-
-    if (chatbotCharIndex <
-        chatbotMessages[chatbotMessageIndex].length) {
-
-        chatbotTypingElement.innerHTML +=
-            chatbotMessages[chatbotMessageIndex]
-                .charAt(chatbotCharIndex);
-
-        chatbotCharIndex++;
-
-        setTimeout(startChatbotTyping, 50);
-
-    }
-    else {
-
-        setTimeout(startChatbotErase, 2000);
-
-    }
-
-}
-
-
-// Erase animation
-
-function startChatbotErase() {
-
-    if (chatbotCharIndex > 0) {
-
-        chatbotTypingElement.innerHTML =
-            chatbotMessages[chatbotMessageIndex]
-                .substring(0, chatbotCharIndex - 1);
-
-        chatbotCharIndex--;
-
-        setTimeout(startChatbotErase, 30);
-
-    }
-    else {
-
-        chatbotMessageIndex++;
-
-        if (chatbotMessageIndex >= chatbotMessages.length) {
-            chatbotMessageIndex = 0;
-        }
-
-        setTimeout(startChatbotTyping, 500);
-
-    }
-
-}
-
-
-// Start chatbot typing
-
-startChatbotTyping();
 
 
 // close navbar when menu item clicked (mobile)

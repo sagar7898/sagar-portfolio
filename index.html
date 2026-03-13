@@ -801,7 +801,7 @@
 
     <!-- API SECTION -->
 
-    <section id="api-playground" >
+    <section id="api-playground">
 
         <div class="container">
 
@@ -904,7 +904,7 @@
 
     <!-- PROBLEM SOLVING -->
 
-    <section  data-aos="fade-right">
+    <section data-aos="fade-right">
 
         <div class="container">
 
@@ -970,7 +970,7 @@
 
     <!-- PRODUCTION EXPERIENCE -->
 
-    <section >
+    <section>
 
         <div class="container">
 
@@ -1116,7 +1116,7 @@
 
     <!-- CONTACT -->
 
-    <section id="contact"  data-aos="fade-up" style="padding:200px 0">
+    <section id="contact" data-aos="fade-up" style="padding:200px 0">
 
         <div class="container text-center">
 
@@ -1145,21 +1145,34 @@
 
     <!-- CHAT BOX -->
 
-    <div class="chat-container">
-        <div class="chat-typing">
-            <span id="chatTypingText"></span>
-        </div>
-        <button id="chatToggle" class="chat-icon">
-            💬
-        </button>
+    <div class="ai-widget">
 
-        <div class="chatbot" id="chatBox">
+        <button class="ai-open-btn">💬</button>
 
-            <div id="chatHeader">Ask About Me</div>
+        <div class="ai-chat-window">
 
-            <div id="chatBody"></div>
+            <div class="ai-chat-header">
+                AI Assistant
+            </div>
 
-            <input type="text" id="chatInput" placeholder="Ask something..." />
+            <div class="ai-chat-messages" id="aiMessages"></div>
+
+            <div class="ai-quick-questions">
+
+                <button onclick="askAI('What technologies does Sagar use?')">Tech</button>
+                <button onclick="askAI('Explain Sagar projects')">Projects</button>
+                <button onclick="askAI('Tell me about Sagar experience')">Experience</button>
+
+            </div>
+
+            <div class="ai-input-zone">
+                <input class="ai-input-box" id="aiInput" placeholder="Ask about Sagar..." />
+                <button class="ai-send-btn">
+                    <svg width="18" height="18" fill="white" viewBox="0 0 24 24">
+                        <path d="M2 21l21-9L2 3v7l15 2-15 2z" />
+                    </svg>
+                </button>
+            </div>
 
         </div>
 
