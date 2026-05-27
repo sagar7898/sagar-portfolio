@@ -784,15 +784,20 @@ section,
   padding-bottom: 80px;
 }
 
-.hero img {
-  position: absolute;
-  inset: 0;
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 1;
-}
+    .hero picture,
+    .hero img {
+        position: absolute;
+        inset: 0;
+        display: block;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
+
+    .hero img {
+        object-fit: cover;
+        object-position: center;
+    }
 
 .hero:before {
   content: "";
@@ -2188,6 +2193,21 @@ section,
   }
 }
 
+
+/* Smooth mobile scroll hover only */
+@media (hover: none) {
+
+    .portfolio .portfolio-card.mobile-active .portfolio-image-container img {
+        transform: scale(1.05);
+        transition: transform 0.75s cubic-bezier(.22,.61,.36,1);
+    }
+
+    .portfolio .portfolio-card.mobile-active .portfolio-image-container .portfolio-overlay {
+        opacity: 1;
+        transition: opacity 0.55s ease;
+        backdrop-filter: blur(2px);
+    }
+}
 /*--------------------------------------------------------------
 # Contact Section
 --------------------------------------------------------------*/

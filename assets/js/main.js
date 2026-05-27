@@ -234,6 +234,46 @@
     })
   }
   window.addEventListener('load', navmenuScrollspy);
-  document.addEventListener('scroll', navmenuScrollspy);
+    document.addEventListener('scroll', navmenuScrollspy);
+
+
+    /**
+ * Mobile Portfolio Smooth Center Hover
+ */
+    if (window.innerWidth <= 768) {
+
+        const portfolioCards = document.querySelectorAll('.portfolio-card');
+        let activeCard = null;
+
+        const portfolioObserver = new IntersectionObserver((entries) => {
+
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+
+                    if (activeCard !== entry.target) {
+
+                        if (activeCard) {
+                            activeCard.classList.remove('mobile-active');
+                        }
+
+                        setTimeout(() => {
+                            entry.target.classList.add('mobile-active');
+                            activeCard = entry.target;
+                        }, 120);
+                    }
+                }
+
+            });
+
+        }, {
+            threshold: 0.65,
+            rootMargin: "-15% 0px -15% 0px"
+        });
+
+        portfolioCards.forEach(card => {
+            portfolioObserver.observe(card);
+        });
+    }
 
 })();
